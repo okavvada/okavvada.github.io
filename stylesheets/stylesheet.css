@@ -59,6 +59,12 @@ body {
 a {
   color: #d5000d;
 }
+
+.blog_link{
+color:#585b5b;
+  font-weight:bold;
+text-decoration: underline;
+}
 a:hover {
   color: #c5000c;
 }
