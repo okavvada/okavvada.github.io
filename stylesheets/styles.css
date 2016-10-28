@@ -236,6 +236,12 @@ p.header {
 	font-size: 16px;
 }
 
+li{
+  float: left;
+  margin-left: 0px;
+color: #000;
+}
+
 h1.header {
 	font-family: Arvo, sans-serif;
 	font-size: 30px;
