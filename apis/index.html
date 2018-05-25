@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+
+    <title>SF topography</title>
+
+  </head>
+
+  <body>
+Recent drought events have significantly affected populations around the US. Twitter, used as a mean of communication, news and opinion sharing and reporting can be a valuable tool to analyze current events in location and time. In this work, we are using the <a href="https://dev.twitter.com/overview/documentation">Twitter API</a> as a source of information of where and when people tweet about droughts. We want to see if there is a correlation with drought affected areas and what the distribution in time is.
+
+First of all, we needed to connect to the Twitter API and generated keys that would allow us to extract information. That was done by creating the required API keys in order to be able to make server requests.
+
+To requests for tweets regarding the drought, the main query parameter was set to "CAdrought" that would filter all the tweets that are referring to the California drought. I was interested in tweets that were done in California so in the request parameters I specified the tweet geocoding to be in a radius of 800km from California's center point. From the JSON result that was returned from the API, the tweets text, date, and location were saved as a dataframe.
+
+The next step was to identify the location of the tweet. Unfortunately, most tweets that were returned were not geotagged so I could not locate where they were tweeted from. An approximation to this problem can be solved by using the user's location, which is the location that the user has specified on their profile. The location specified in the user's profile, however, was a city and not geographic coordinates. 
+
+To get geographic coordinates of the tweets location I used <a href="https://developers.google.com/maps/documentation/geocoding/start">Google's Geocoding API</a>. By going through the dataframe I extracted the city that was marked as a location and passed it through the Google API to get the latitude and longitude of the center of the city. This was an approximation of the location but the best available as Twitter did not have information on the geographic coordinates of the tweet's location. There was also a rate limiting step in Google's API so I had to add a timeout in my code to make sure I give Google enough time in between requests.
+
+Some tweets might have been tweeted from California but had users that were just visiting from a different location. These tweets would be marked with a wrong location. To solve this problem I went through the data and selected only the tweets that were tweeted from California and from a Californian user so I could point their location. This was done using a bounding box around California and selecting only the points with coordinates that fell inside the bounding box.
+
+The next order of business was to be able to generate enough data even with the rate limiting requirements of Twitter's server. To generate more data than the 100 results, which is the default Twitter response, I wrote a for loop that would go over sequential days of the week and query the server for the specific days. By also adding a second loop in the system I was able to query the server for more data in each day by saving the last id value that was reported and asking for more data with ids smaller than that value. With these two "tricks" I was able to increase the number of results that I got from 100 to about 2,800. The two issues that I had with this approach is that I could not query the server for days older than a week old and also could not increase the number of times I am asking for data for each day too much as the server would timeout.
+
+The resulting data was saved as a `csv` and uploaded to CARTO for visualization. The final map can be found below. I used a Torque representation to take into account the time component of the tweets throughout the week and time of day. We can identify clusters of tweets around the major urban areas of Los Angeles, San Francisco, and Sacramento as well as some across the Central Valley which are probably referring to the agricultural issues and some close to lake Tahoe probably referring to the lack of snow.
+
+<iframe width="100%" height="520" frameborder="0" src="https://okavvada.carto.com/viz/7c0f7006-8a81-11e6-b018-0e3a376473ab/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+
+  	  </body>
+
+</html>
