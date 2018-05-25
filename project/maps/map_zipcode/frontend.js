@@ -35,6 +35,18 @@ polyLayer.loadGeoJson('zipcode_water.geojson');
               cursor: 'auto'})
       })
 
+var infowindow = new google.maps.InfoWindow();
+polyLayer.addListener('mouseover', function(event) {
+    cap = (Math.round(event.feature.getProperty("total_water_MGD")*100)/100).toLocaleString();
+    var html = "Water Consumption: </br>" + cap + " MGD";
+
+  infowindow.setContent(html);
+  infowindow.setPosition(event.latLng);
+  infowindow.setOptions({disableAutoPan: true});
+  infowindow.open(map);
+
+    });
+
 html_text = "<div class='tooltip-wrap' id='legend-title'></br><strong>Water Consumption (MGD) </strong></br><div>" +
                   "<span class='legend-swatch' style='background-color: #34d84c;opacity: 0.6'></span>" +
                   "<span class='legend-range'><0.02</span></div><div>" +
