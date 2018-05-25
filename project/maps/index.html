@@ -2,50 +2,23 @@
 <html lang="en">
   <head>
     <title>Project Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 
-    <script src="https://mapzen.com/js/mapzen.min.js"></script>
-    <script src="https://mapzen.com/tangram/0.8/tangram.min.js"></script>
 
   </head>
   <body>
     <div id="map"></div>
-    <script>
-      var austin = [30.283747, -97.706758];
 
-      var map = L.Mapzen.map('map', {
-        center: austin,
-        zoom: 10,
-        scene: 'scene.yaml',
-      }); 
-
-
-      var legend = L.control({position: 'bottomleft'});
-      legend.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'info legend'), // create a div with a class "info legend"
-                grades = [0, 0.002, 0.02, 0.2],
-                colors = ['#34d84c', '#3964db', '#d18a08', '#c60505']
-                labels = [];
-                title = ['<strong> Water Consumption (MGD) </strong>'+ '<br>'];
-            // loop through our intervals and generate a label with a colored square for eacsh interval
-            for (var i = 0; i < grades.length; i++) {
-                title.push(
-                    '<i style="background:' + colors[i] + '"></i> ' +
-                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+'));
-            }
-            div.innerHTML = title.join('<br>');
-            return div;
-
-        };
-
-      // Move zoom control to the top right corner of the map
-      map.zoomControl.setPosition('topright');
-      legend.addTo(map);
-
-
-    </script>
+    <script type="text/javascript" src="static/frontend.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.1/jszip.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.js"></script>
+     <script src="https://d3js.org/d3.v5.min.js"></script>
+     <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?&libraries=places&callback=initMap&key=AIzaSyD_eLgWEA4MduW0E14o00kXoXHHwnjFlVw"
+    async defer></script>
   </body>
 </html>
