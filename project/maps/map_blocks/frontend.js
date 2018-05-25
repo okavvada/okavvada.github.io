@@ -46,7 +46,7 @@ polyLayer.addListener('mouseover', function(event) {
   infowindow.open(map);
 
     });
-polyLayer.addEventListener('mouseout', function() {
+polyLayer.addListener('mouseout', function() {
     window.infowindow.close();
   });
 
