@@ -9,4 +9,10 @@ function initMap() {
       lng: -97.706758},
         zoom: 10,
       }); 
+
+
+// polyLayer = new google.maps.Data({map:map});
+
+map.data.loadGeoJson('polygons.geojson');
+
 };
