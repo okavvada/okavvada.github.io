@@ -12,7 +12,7 @@ function initMap() {
 
 
 	polyLayer = new google.maps.Data({map:map});
-	polyLayer.addGeoJson('zipcode_water.geojson');
+polyLayer.loadGeoJson('zipcode_water.geojson');
 
 
 	polyLayer.setStyle(function(feature) {
@@ -28,7 +28,7 @@ function initMap() {
       if (feature.getProperty('total_water_MGD') < 1000){
         color = '#ffe554';
       }
-      return ({visible: vis_biomass,
+      return ({
               fillColor: color,
               fillOpacity: 0.5,
               strokeWeight: 0.3,
