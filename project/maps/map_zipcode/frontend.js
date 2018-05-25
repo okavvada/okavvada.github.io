@@ -35,4 +35,16 @@ polyLayer.loadGeoJson('zipcode_water.geojson');
               cursor: 'auto'})
       })
 
+html_text = "<div class='tooltip-wrap' id='legend-title'></br><strong>Biomass in County </br> (thousand BDT/year)</strong></br><div>" +
+                  "<span class='legend-swatch' style='background-color: #ffe554;opacity: 0.6'></span>" +
+                  "<span class='legend-range'><1</span></div><div>" +
+                  "<span class='legend-swatch' style='background-color: #9df28a;opacity: 0.6'></span>" +
+                  "<span class='legend-range'>1 - 100</span></div><div>" +
+                  "<span class='legend-swatch' style='background-color: #219904;opacity: 0.6'></span>" +
+                  "<span class='legend-range'>100 - 1000</span></div><div>" +
+                  "<span class='legend-swatch' style='background-color: #165906;opacity: 0.6'></span>" +
+                  "<span class='legend-range'>1000+</span></div></div>"
+parent = document.getElementById('legend');
+parent.insertAdjacentHTML("beforeend", html_text)
+
 };
