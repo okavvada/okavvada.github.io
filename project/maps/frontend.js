@@ -28,7 +28,7 @@ polyLayer.loadGeoJson('zipcode_water.geojson');
       if (feature.getProperty('total_water_MGD') < 1000){
         color = '#ffe554';
       }
-      return ({visible: vis_biomass,
+      return ({
               fillColor: color,
               fillOpacity: 0.5,
               strokeWeight: 0.3,
