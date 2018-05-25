@@ -12,7 +12,7 @@ function initMap() {
 
 
 	polyLayer = new google.maps.Data({map:map});
-	map.data.loadGeoJson('zipcode_water.geojson');
+polyLayer.loadGeoJson('zipcode_water.geojson');
 
 
 	polyLayer.setStyle(function(feature) {
