@@ -46,6 +46,9 @@ polyLayer.addListener('mouseover', function(event) {
   infowindow.open(map);
 
     });
+polyLayer.addEventListener('mouseout', function() {
+    window.infowindow.close();
+  });
 
 html_text = "<div class='tooltip-wrap' id='legend-title'></br><strong>Water Consumption (MGD) </strong></br><div>" +
                   "<span class='legend-swatch' style='background-color: #34d84c;opacity: 0.6'></span>" +
