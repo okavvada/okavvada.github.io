@@ -1,0 +1,36 @@
+import: https://mapzen.com/carto/zinc-style/4/zinc-style.yaml
+
+sources:
+    polygons_in_polls:
+        type: GeoJSON
+        url: https://gist.githubusercontent.com/okavvada/a400d7509cc76462227e705849d2e455/raw/590a1035e32df9dab2d9594887545f90d0750329/zipcode_water.geojson
+
+styles:
+    choropleth:
+        base: polygons
+        blend: multiply
+
+layers:
+    my_data_viz:
+        data: { source: polygons_in_polls}
+        draw:
+            choropleth:
+                visible: true
+                interactive: true
+                order: 10000
+                color: |
+                    function() {
+                        var count = feature.total_water_MGD;
+                        var OrRd = ['34d84c', '3964db', 'd18a08', 'c60505'];
+                        var color =
+                        count = 0 ? '000' :
+                        count < 0.02 ? OrRd[0] :
+                        count < 0.2 ? OrRd[1] :
+                        count < 2 ? OrRd[2] :
+                        OrRd[3] ;
+                        return "#" + color;
+                    }
+            lines:
+                width: 1px
+                color: '#000'
+                order: 100000
