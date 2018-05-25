@@ -16,17 +16,17 @@ polyLayer.loadGeoJson('zipcode_water.geojson');
 
 
 	polyLayer.setStyle(function(feature) {
-      if (feature.getProperty('total_water_MGD') > 1000000){
-        color = '#165906';
+      if (feature.getProperty('total_water_MGD') > 2){
+        color = '#c60505';
       }
-      if (feature.getProperty('total_water_MGD') > 100000 && feature.getProperty('total_water_MGD') < 1000000){
-        color = '#219904';
+      if (feature.getProperty('total_water_MGD') > 0.2 && feature.getProperty('total_water_MGD') < 2){
+        color = '#d18a08';
       }
-      if (feature.getProperty('total_water_MGD') > 1000 && feature.getProperty('total_water_MGD') < 100000) {
-        color = '#9df28a';
+      if (feature.getProperty('total_water_MGD') > 0.02 && feature.getProperty('total_water_MGD') < 0.2) {
+        color = '#3964db';
       }
-      if (feature.getProperty('total_water_MGD') < 1000){
-        color = '#ffe554';
+      if (feature.getProperty('total_water_MGD') < 0.02){
+        color = '#34d84c';
       }
       return ({
               fillColor: color,
