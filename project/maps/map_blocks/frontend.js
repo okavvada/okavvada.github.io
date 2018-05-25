@@ -12,23 +12,23 @@ function initMap() {
 
 
 	polyLayer = new google.maps.Data({map:map});
-	maps.data.loadGeoJson('zipcode_water.geojson');
+polyLayer.loadGeoJson('tabblocks_water.geojson');
 
 
 	polyLayer.setStyle(function(feature) {
-      if (feature.getProperty('total_water_MGD') > 1000000){
+      if (feature.getProperty('total_water') > 1000000){
         color = '#165906';
       }
-      if (feature.getProperty('total_water_MGD') > 100000 && feature.getProperty('total_water_MGD') < 1000000){
+      if (feature.getProperty('total_water') > 100000 && feature.getProperty('total_water') < 1000000){
         color = '#219904';
       }
-      if (feature.getProperty('total_water_MGD') > 1000 && feature.getProperty('total_water_MGD') < 100000) {
+      if (feature.getProperty('total_water') > 1000 && feature.getProperty('total_water') < 100000) {
         color = '#9df28a';
       }
-      if (feature.getProperty('total_water_MGD') < 1000){
+      if (feature.getProperty('total_water') < 1000){
         color = '#ffe554';
       }
-      return ({visible: vis_biomass,
+      return ({
               fillColor: color,
               fillOpacity: 0.5,
               strokeWeight: 0.3,
