@@ -37,7 +37,7 @@ polyLayer.loadGeoJson('zipcode_water.geojson');
 
 var infowindow = new google.maps.InfoWindow();
 polyLayer.addListener('mouseover', function(event) {
-    cap = (Math.round(event.feature.getProperty("total_water_MGD")*100)/100).toLocaleString();
+    cap = (Math.round(event.feature.getProperty("total_water_MGD")*1000)/1000).toLocaleString();
     var html = "Water Consumption: </br>" + cap + " MGD";
 
   infowindow.setContent(html);
