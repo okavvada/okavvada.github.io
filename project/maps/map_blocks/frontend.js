@@ -34,7 +34,7 @@ polyLayer.loadGeoJson('tabblocks_water.geojson');
               strokeWeight: 0.3,
               cursor: 'auto'})
       })
-html_text = "<div class='tooltip-wrap' id='legend-title'></br><strong>Water Consumption (MGD) </br> (thousand BDT/year)</strong></br><div>" +
+html_text = "<div class='tooltip-wrap' id='legend-title'></br><strong>Water Consumption (MGD) </br></strong></br><div>" +
                   "<span class='legend-swatch' style='background-color: #34d84c;opacity: 0.6'></span>" +
                   "<span class='legend-range'><0.02</span></div><div>" +
                   "<span class='legend-swatch' style='background-color: #3964db;opacity: 0.6'></span>" +
