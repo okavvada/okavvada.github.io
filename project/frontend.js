@@ -8,8 +8,5 @@ function initMap() {
       lat: 30.283747,
       lng: -97.706758},
         zoom: 10,
-        //scene: 'scene.yaml',
       }); 
-
-  // Initialize the map to center to CA
-}
+};
