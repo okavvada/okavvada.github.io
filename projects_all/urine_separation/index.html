@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Urine separation webpage by okavvada</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Feasibility of urine separation in San Francisco</h1>
+        <p class="header"></p>
+
+        <p class="header">A modeling framework for decentralized nutrient management</p>
+
+      </header>
+      <section>
+
+        <h3>
+<c class="anchor" aria-hidden="true"></c>What is urine separation?</h3>
+<p>Wastewater is generated from our cities discharges and runoff. It is usually considered a waste product that needs to be safely discharged back to the environment. Apart from the contaminants and pollutants that it contains, wastewater also contains nutrients. San Francisco along with other urban areas, plan large capital investments for nutrient management in the wastewater to avoid and reduce eutrophication in the receiving bodies. Urine has received increasing interest in recent years as it comprises only 1% of the wastewater volume but contains the majority of the nutrient concentration. Extracting the nutrients, specifically nitrogen, from source separated urine can eliminate the need for nitrogen removal at the centralized wastewater treatment plants and potentially save large amounts of energy requirements and economic costs. Physical separation of urine from the wastewater can be easily done at the source before the urine and feces are mixed by the introduction of source separating toilet fixtures. The nitrogen can then be extracted from the urine before it is mixed with the rest of the wastewater for further treatment.</p>
+
+<p>This work aims to conduct a life-cycle feasibility study to assess the environmental and economic requirements of decentralized nitrogen management from source separated urine. We wish to evaluate the life-cycle impacts of a decentralized nitrogen removal technology and assess the logistics and management impacts of implementing the decentralized technology in a real case study.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/N_recovery.png"><img id="feasibility-image" src="images/N_recovery.png" height="200" width="500"></a>
+<br />
+<c class= "caption"> Schematic of the decentralized nitrogen management scenario</c>
+</p>
+<h3><c class="anchor" aria-hidden="true"></c>Technologies for nitrogen management</h3>
+<p>This work focuses on assessing ion-exchange as a potential technology for removing nitrogen from uring through adsorption. Due to its positive charge nitrogen can adsorb onto cation exchange resins in the form of ammonium (NH<sub>4</sub><sup>+</sup>). Ion exchange is a well established technology in water treatment but only recently has it been applied to nitrogen removal and recovery. As it is a physicochemical process, ion-exchange is a more stable and predicable process than conventional biological nitrogen removal that can be highly affected by pH, temperature and oxygen concentration.</p>
+
+<p>The objective of this study was to use laboratory results to inform real world implementation. By translating the experimental results into implementation parameters and combining them with management scenarios, we were able to assess the feasibility of decentralized ion-exchange implementation and evaluate the energy intesity, cost and greenhouse gas (GHG) emissions of the overall process.</p>
+
+<h3><c class="anchor" aria-hidden="true"></c>Description of ion-exchange</h3>
+<p>Ion exchange is a well-established technology in water treatment, mainly used for for removing impurities from drinking water, combined wastewater, and landfill leachate. Only recently has it been applied to urine for nitrogen recovery. Urine is an ideal solution for ammonium recovery via ion exchange because of its high total ammonia nitrogen concentration, which can be adsorbed onto negatively charged adsorbents.</p>
+
+<p>In this study, we used a synthetic resin for nitrogen capture with ammonium specificity and high adsorption capacity. When the system is in operation, urine flows through a fixed bed reactor filled with resin and the ammonium get adsorbed on the resin particles. The output stream involves urine, almost nitrogen free. In order to be able to reuse the resin, a regeneration stage has to occur. At this stage, acid flows through the saturated adsorbent which elutes the ammonium, creating ammonium sulfate concentrate. A by-product of this process is the liquid ammonium sulfate concentrate which can be used as fertilizer.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/ion_exchange.png"><img id="feasibility-image" src="images/ion_exchange.png" height="350" width="400"></a>
+<br />
+<c class= "caption">Ion-exchange mechanism</c>
+</p>
+<h3><c class="anchor" aria-hidden="true"></c>Life-cycle Inventory</h3>
+<p>In this study, we intended on connecting laboratory results to techno-economic and environmental analysis and analyzing the life-cycle impacts of decentralized nitrogen management through ion-exchange.</p>
+
+<p>All processes that contribute to the energy intensity, GHG emissions and cost of the ion-exchange technology where included in the data inventory for the analysis. The life-cycle assessment involved both the economic input - output LCA (EIO-LCA) and process based LCA models. Laboratory results were used to estimate the amount of materials needed and duration of processes to estimate their energy demand. A schematic of the process map is shown below.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/process_map.png"><img id="feasibility-image" src="images/process_map.png" height="550" width="650"></a>
+<br />
+<c class= "caption">Ion-exchange mechanism</c>
+</p>
+<h3><c class="anchor" aria-hidden="true"></c>Logistics scenarios</h3>
+<p>Implementing nitrogen capture at the household level requires estimating the transportation impacts of the last-mile logistics for the collection of the nitrogen in a collection facility. Last-mile logistics is a term used in supply chain management and refers to the transportation involved in the last step of the process, usually from a hub to the people's homes or vice-versa. If we want to assess the overall impacts of a decentralized nitrogen management strategy, the logistics part should be modeled in detail as it could be a significant part of the overall impacts. San Francisco was chosen as a case study to assess the decentralized nitrogen recovery implementation.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/logistics.png"><img id="feasibility-image" src="images/logistics.png" height="150" width="550"></a>
+<br />
+<c class= "caption">Logistics schematic</c>
+</p>
+<p>To effectively model a realistic process for the implementation of the decentralized approach, all the building locations of San Francisco were modeled, with their associated landuse (residential/commercial) and population of residents or employees respectively. For a similar example on how the population attribution was done to buildings visit an <a class = "authors" href="http://pubs.acs.org/journal/esthag">associated blog post</a> for the city of Austin.</p>
+
+<p>The main concerns for the logistics management is the number of regeneration facilities that exist in the system and their location. To assess the effect of the number of regeneration facilities, the model was run multiple times with different number of facility numbers and the results were logged. To estimate the effect of the facility location, three scenarios were run; an <c>"iso-distant"</c> scenario, where the regeneration facilities are evenly distributed throughout the city, so that their service areas are approximately equal, a <c>"grid"</c> scenario where the locations of the regeneration facilities are predifined in a grid pattern and a <c>"random"</c> scenario where the locations are not predifined or optimized but instead are generated randomly. The three scenarios with different numbers of regeneration facilities are illustrated below.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/logistics_distribution.png"><img id="feasibility-image" src="images/logistics_distribution.png" height="350" width="750"></a>
+<br />
+<c class= "caption">Number and location of regeneration facilities scenarios</c>
+</p>
+<p>The next step was to calculate the transportation distances for each scenario and for each number of regeneration facilities. To model the transportation distances a traveling salesman problem (TSP) algorithm was used. From each regeneration facility, the overall transportation distance was calculated from visiting all points in the most optimal way in a continuous route. To make our assessment more realistic, a time constraint of 8 hour working days was also accounted for, to estimate the number of trucks needed for the collection. The final step was to estimate the transportation distance for the final step at the fertilizer collection facility, which was located in the center of the cluster generated by the regeneration facilities.</p>
+
+<h3><c class="anchor" aria-hidden="true"></c>Results</h3>
+<p>For each scenario in San Francisco we determined the life-cycle energy and GHG emissions for the nitrogen recovery technology. The corresponding impacts and their breakdown is shown below. The results are shown in a per m<sup>3</sup> of urine basis to make them comparable with other nitrogen removal technologies.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/LCA_breakdown.PNG"><img id="feasibility-image" src="images/LCA_breakdown.PNG" height="300" width="750"></a>
+<br />
+<c class= "caption">LCA breakdown</c>
+</p>
+
+<p>The effect of the level of decentralization, aka the number of regeneration facilities that exist in the system was found to be significantly important. The level of decentralization appears to illustrate an exponential decay performance where more facilities result in lower energy and GHG impacts. On a cost basis however, an increase in regeneration facilities results in a linear increase on the system cost, mostly due to the commercial space renting market. The effect of the location of the facilities was found to be not significant with respect to energy, GHG or cost.</p>
+
+<p>It is important to point out that the facility location appears as having minimal impact on the result because of the collection management assumption as a TSP problem. If the problem was set up as every household transports its own cartridge to the facility, then the impact of facility location would probably have been much more significant.</p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/result_scale.pngG"><img id="feasibility-image" src="images/result_scale.png" height="500" width="650"></a>
+<br />
+<c class= "caption">Level of decentralization</c>
+</p>
+<p>By examining the energy intensity and cost of the different scenarios we can identify optimal solution and present the tradeoff analysis for different number of regeneration facilities. Figure 6 presents the tradeoffs for the iso-distant scenario for different levels of decentralization. The frontier is the curve in which it is impossible to decrease one parameter without increasing the other, in this case energy and cost and GHG and cost. By evaluating these frontiers, we can identify at which level of decentralization the marginal benefits of increasing cost to minimize energy intensity become insignificant and thus there are no significant benefits of continuing to increase the system cost. </p>
+<p>
+<a href="https://raw.githubusercontent.com/okavvada/San_Francisco_webpage/gh-pages/images/optimality.PNG"><img id="feasibility-image" src="images/optimality.PNG" height="300" width="750"></a>
+<br />
+<c class= "caption">Decision tradeoffs</c>
+</p>
+<h3>
+<c class="anchor" aria-hidden="true"></c>Relevant Work</h3>
+<p>This work summarizes previous published research. The findings and results of the original study can be found in the <a class = "authors" href="http://pubs.acs.org/journal/esthag">Environmental Science and Technology Journal</a> under the titled publication <a class = "authors" href="">Advanced spatial modeling and lifecycle assessment for real world implementation of decentralized nitrogen recovery</a>. </p>
+
+<h3>
+<c class="anchor" aria-hidden="true"></c>Authors Bios</h3>
+
+<p><a class = "authors" href="https://okavvada.github.io/"> Olga Kavvada</a> is a phD Student in Civil and Environmental Engineering at U.C. Berkeley. Her work involves systems-level analysis to improve our usage of energy and water resources under the constraints of climate change.</p>
+
+<p><a class = "authors" href="https://williamtarpeh.jimdo.com"> William A. Tarpeh</a> is a phD Student in Civil and Environmental Engineering at U.C. Berkeley. His research involves creating innovative technologies for nitrogen recovery through urine separation.</p>
+ 
+<p><a class = "authors" href="http://www.ce.berkeley.edu/people/faculty/Nelson"> Dr. Kara Nelson</a> is a professor of Civil and Environmental Engineering at U.C. Berkeley.  Her teaching and research address innovative strategies to increase the sustainability of urban water infrastructure around the world.  She leads the engineering research thrust at ReNUWIt.</p>  
+
+<p><a class = "authors" href="http://www.ce.berkeley.edu/people/faculty/Horvath"> Dr. Arpad Horvath</a> is a professor of Civil and Environmental Engineering at UC Berkeley. His teaching and research involves life-cycle environmental and economic assessment of products, processes, and services to answer important questions about civil infrastructure systems and the built environment.</p>
+
+
+<h3>
+<c class="anchor" aria-hidden="true"></c>Support or Contact</h3>
+
+<p>Do you have questions or comments? Please contact Olga Kavvada: <a href="https://github.com/okavvada">@okavvada</a> or email <a class="email" href="mailto:okavvada@gmail.com">okavvada@gmail.com</a>.</p>
+      </section>
+      <footer>
+        <p><small>This project is maintained by <a href="https://github.com/okavvada">@okavvada</a></p>
+        <p><small>See other <a href="https://okavvada.github.io/">blogs</a></p>
+      </footer>
+    </div>
+		
+  </body>
+</html>
